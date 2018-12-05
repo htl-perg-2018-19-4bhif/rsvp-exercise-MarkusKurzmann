@@ -4,11 +4,13 @@
   "description": "Sample for mobile computing course at HTL Perg",
   "main": "app.ts",
   "scripts": {
-    "start": "ts-node app.ts"
+    "build": "npx tsc commands.ts",
+    "start": "npm run build && ts-node app.ts"
   },
   "author": "Rainer Stropek",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-basic-auth": "^1.1.6",
     "http-status-codes": "^1.3.0",

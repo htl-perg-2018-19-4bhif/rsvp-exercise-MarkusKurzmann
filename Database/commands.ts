@@ -11,13 +11,14 @@ export function getParty(req: Request, res: Response): void {
 }
 
 export function postRegister(req: Request, res: Response): void {
-    if (!req.body.firstName || !req.body.lastName) {
+    if (!req.body.firstName || !req.body.lastName || !req.body.partyID) {
         res.status(BAD_REQUEST).send("Some neccassary fields were empty!");
     } else {
         const data = <Datastore>req.app.locals;
         const count = data.guests.count();
         if (count < 10) {
-            const newDoc = data.guests.insert({ firstName: req.body.firstName, lastName: req.body.lastName });
+            const newDoc = data.guests.insert({ partyID: req.body.partyID ,firstName: req.body.firstName, lastName: req.body.lastName });
+            console.log(req.body.partyID);
             res.status(CREATED).send(newDoc);
         } else {
             res.status(UNAUTHORIZED).send("Maximum number of guests has already been reached!");

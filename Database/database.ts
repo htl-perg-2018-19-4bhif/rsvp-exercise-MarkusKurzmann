@@ -15,16 +15,20 @@ export function init(): Datastore {
     if (!party) {
         party = db.addCollection("party");
     }
-    party.insert({ title: "Grill and Chill", location: "Bad Kreuzen", date: new Date(2019, 6, 12) });
+    party.insert({partyID: 1, title: "Grill and Chill", location: "Bad Kreuzen", date: new Date(2019, 6, 12) });
+    party.insert({partyID: 2, title: "Sun & Fun", location: "Münzbach", date: new Date(2019, 6, 24) });
+
     return new Datastore(db, guests, party);
 }
 
 export interface guest{
+    partyID: number;
     firstName: string;
     lastName: string
 }
 
 export interface party{
+    partyID: number;
     title: string;
     location: string;
     date: Date;
