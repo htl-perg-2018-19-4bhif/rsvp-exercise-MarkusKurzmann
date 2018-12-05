@@ -8,7 +8,7 @@
     "copy-jquery": "cpx ./node_modules/jquery/dist/jquery.js dist/",
     "copy-app": "cpx ./app.js dist/",
     "build": "cpx *.{html,css} dist/ && npm run copy-bootstrap && npm run copy-jquery && npm run copy-app",
-    "start": "browser-sync start -c bs-config.js"
+    "start": "npm run build && browser-sync start -c bs-config.js"
   },
   "author": "Rainer Stropek",
   "license": "MIT",
