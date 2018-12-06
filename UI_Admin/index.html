@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html onload="loadPartys()">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin-View</title>
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body onload="loadPartys()">
+    <div class="container">
+        <h1>Guest-List</h1>
+        </head>
+        <form name="registrationForm">
+            <div class="form-group">
+                <label for="partyID">Choose your party:</label>
+                <select id="dropdown" class="form-control" required></select>
+                <input type="button" name="register" value="View guests" onclick="loadGuests()">
+            </div>
+        </form>
+        <span id="guests">
+        </span>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
